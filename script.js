@@ -27,13 +27,40 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Validação do Formulário
+// Envio do Formulário para WhatsApp
 const formulario = document.getElementById("formularioContato");
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Simular envio do formulário
-  alert("Obrigado pela sua mensagem! Entrarei em contato em breve.");
+  const nome = document.getElementById("nome").value;
+  const empresa = document.getElementById("empresa").value;
+  const email = document.getElementById("email").value;
+  const telefone = document.getElementById("telefone").value;
+  const mensagem = document.getElementById("mensagem").value;
+
+  const numeroWhatsApp = "244947399578";
+
+  let textoMensagem = `🚀 *Novo Contato via Portfólio!*\n\n`;
+  textoMensagem += `👤 *Nome:* ${nome}\n`;
+
+  if (empresa.trim() !== "") {
+    textoMensagem += `🏢 *Empresa:* ${empresa}\n`;
+  }
+
+  textoMensagem += `📧 *E-mail:* ${email}\n`;
+
+  if (telefone.trim() !== "") {
+    textoMensagem += `📱 *Telefone:* ${telefone}\n`;
+  }
+
+  textoMensagem += `\n💬 *Mensagem:*\n${mensagem}`;
+
+  const mensagemCodificada = encodeURIComponent(textoMensagem);
+
+  const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+  window.open(linkWhatsApp, "_blank");
+
   formulario.reset();
 });
 
