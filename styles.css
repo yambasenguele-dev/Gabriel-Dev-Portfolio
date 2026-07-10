@@ -328,7 +328,7 @@ body {
 
 .tecnologia {
   background: var(--cor-cinza-escuro);
-  padding: 0.3rem 0.8rem;
+  padding: 0.3rem 1.2rem;
   border-radius: 10px;
   font-size: 0.8rem;
   color: var(--cor-acento);
@@ -434,11 +434,13 @@ body {
   text-decoration: none;
   z-index: 1000;
   animation: pulse 2s infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .icone-whatsapp {
-  color: white;
-  font-size: 2rem;
+  width: 32px;
+  height: 32px;
+  fill: white;
 }
 
 /* Footer */
