@@ -35,11 +35,12 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.95);
+  background-color: rgba(24, 22, 49, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
   transition: all 0.3s ease;
+  opacity: 95%;
 }
 
 .nav-container {
@@ -53,12 +54,15 @@ body {
   font-weight: bold;
   color: var(--cor-acento);
   text-decoration: none;
+  margin-left: 0px;
 }
 
 .menu-navegacao {
   display: flex;
   list-style: none;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-navegacao a {
@@ -126,6 +130,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .botao {
